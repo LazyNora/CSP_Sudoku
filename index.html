@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sudoku Solver</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<style>
+			#nav {
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				margin-bottom: 50px;
+			}
+			#speed-slider {
+				vertical-align: middle;
+			}
+			.btn {
+				background-color: #4caf50;
+				border: none;
+				border-radius: 0.25rem;
+				text-transform: uppercase;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				margin: 4px 2px;
+				cursor: pointer;
+				vertical-align: middle;
+			}
+			.btn:hover {
+				background-color: #45a049;
+			}
+			.btn[disabled] {
+				background-color: #ccc;
+				cursor: not-allowed;
+			}
+			input[type="range"] {
+				-webkit-appearance: none;
+				appearance: none;
+				background: transparent;
+				cursor: pointer;
+				width: 15rem;
+			}
+			input[type="range"]::-webkit-slider-runnable-track {
+				background: #053a5f;
+				height: 0.5rem;
+			}
+			input[type="range"]::-moz-range-track {
+				background: #053a5f;
+				height: 0.5rem;
+			}
+			input[type="range"]::-webkit-slider-thumb {
+				-webkit-appearance: none; /* Override default look */
+				appearance: none;
+				margin-top: -12px; /* Centers thumb on the track */
+				background-color: #4caf50;
+				height: 2rem;
+				width: 2rem;
+				border-radius: 100%;
+			}
+			input[type="range"]::-webkit-slider-thumb:hover {
+				background-color: #45a049;
+			}
+			input[type="range"]::-moz-range-thumb {
+				border: none; /*Removes extra border that FF applies*/
+				border-radius: 0; /*Removes default border-radius that FF applies*/
+				background-color: #4caf50;
+				height: 2rem;
+				width: 2rem;
+				border-radius: 100%;
+			}
+			input[type="range"]::-moz-range-thumb:hover {
+				background-color: #45a049;
+			}
+			input[type="range"]:focus {
+				outline: none;
+			}
+			input[type="range"]:focus::-webkit-slider-thumb {
+				border: 1px solid #053a5f;
+				outline: 3px solid #053a5f;
+				outline-offset: 0.125rem;
+			}
+			input[type="range"]:focus::-moz-range-thumb {
+				border: 1px solid #053a5f;
+				outline: 3px solid #053a5f;
+				outline-offset: 0.125rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="sudoku-grid"></div>
+		<div id="nav">
+			<button class="btn" id="to-start"><i class="fa-solid fa-backward-fast"></i></button>
+			<button class="btn" id="previous-button"><i class="fa-solid fa-backward"></i></button>
+			<button class="btn" id="play-button"><i class="fa-solid fa-play"></i></button>
+			<button class="btn" id="pause-button"><i class="fa-solid fa-pause"></i></button>
+			<button class="btn" id="next-button"><i class="fa-solid fa-forward"></i></button>
+			<button class="btn" id="to-end"><i class="fa-solid fa-forward-fast"></i></button>
+			<input type="range" id="speed-slider" min="0" max="1000" value="500" />
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
